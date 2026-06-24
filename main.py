@@ -1,3 +1,6 @@
+import sys, os
+sys.path.insert(0, os.path.dirname(__file__))
+
 """
 face-scanner — holographic face point cloud visualizer
 run: python main.py

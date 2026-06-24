@@ -64,9 +64,9 @@ def estimate_pose(
     pose_mat = cv2.hconcat([rotation_mat, np.zeros((3, 1))])
     _, _, _, _, _, _, euler = cv2.decomposeProjectionMatrix(pose_mat)
 
-    pitch = float(euler[0])
-    yaw   = float(euler[1])
-    roll  = float(euler[2])
+    pitch = float(euler[0].flat[0])
+    yaw   = float(euler[1].flat[0])
+    roll  = float(euler[2].flat[0])
 
     # clamp to readable range
     yaw   = max(-90.0, min(90.0,  yaw))
